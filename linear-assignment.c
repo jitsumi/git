@@ -51,8 +51,8 @@ void compute_assignment(int column_count, int row_count, int *cost,
 		else if (j1 < -1)
 			row2column[i] = -2 - j1;
 		else {
-			int min = COST(!j1, i) - v[!j1];
-			for (j = 1; j < column_count; j++)
+			int min = INT_MAX;
+			for (j = 0; j < column_count; j++)
 				if (j != j1 && min > COST(j, i) - v[j])
 					min = COST(j, i) - v[j];
 			v[j1] -= min;
